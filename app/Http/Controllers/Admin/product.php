@@ -14,8 +14,8 @@ class product extends Controller
      */
     public function index()
     {
-
-
+   
+    echo("fsdfsdf");
         return view('Admin.product.index');
     }
 
