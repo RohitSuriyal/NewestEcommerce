@@ -6,6 +6,8 @@
     </div>
 
     <div class="card w-75 m-auto p-3">
+        <x-admin.error/>
+       
         <form method="Post" class="productform" action="{{ route('admin.product.store') }}" enctype="multipart/form-data">
             @csrf
 
@@ -20,7 +22,7 @@
 
             <div class="row">
                 <div class="col-md-6">
-                    <x-admin.form name="rating" label="Rating" type="number" placeholder="Enter the rating" />
+                    <x-admin.form name="rating" label="Rating" type="number" value="" placeholder="Enter the rating" />
                 </div>
                 <div class="col-md-6">
                     <x-admin.form name="category_id" label="Category" type="select" :lists="$categories" />
@@ -43,9 +45,13 @@
                 </div>
 
             </div>
+
+            <div class="row">
+            <x-admin.form label="Main Image" name="main_image"  type="file" aria-placeholder="selec the image"/>
+            </div>
             <div class="row">
                 <label class="ms-1 my-2">Image</label>
-               <x-admin.form name="image" label="image" type="file"/>
+               <x-admin.form name="images" label="image" type="file"/>
 
             </div>
 

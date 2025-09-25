@@ -11,18 +11,26 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('admin')->name('admin.')->group(function () {
+
     Route::post('/register', [AdminAuthenticate::class, 'register'])->name('register');
 
     Route::post("/login", [AdminAuthenticate::class, "login"])->name('login');
+});
+
+Route::prefix('admin')->middleware(['adminauth'])->name('admin.')->group(function () {
+
+
 
     Route::get("/admindashboard", [Adminview::class, "index"])->name("dashboard");
-    Route::resource('productcategory', ProductCategoryController::class);
+
     Route::resource('productbrand', ProductBrand::class);
     Route::post("searchbrand", [ProductBrand::class, "searchbrand"])->name("searchbrand");
 
     //this is for the productacategory
-     Route::resource("productcategory", ProductCategoryController::class);
-     Route::post("searchproductcategory",[ProductCategoryController::class,"searchproductcategory"])->name('searchproductcategory');
+    Route::resource("productcategory", ProductCategoryController::class);
+    Route::post("searchproductcategory", [ProductCategoryController::class, "searchproductcategory"])->name('searchproductcategory');
 
-     Route::resource("product",product::class); 
+    Route::post("searchproducts", [product::class, "searchproducts"])->name("searchproduct");
+
+    Route::resource("product", product::class);
 });

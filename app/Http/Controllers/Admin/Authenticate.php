@@ -86,9 +86,4 @@ class Authenticate extends Controller
                 }
             }
 
-
-            
-
-
-
 }

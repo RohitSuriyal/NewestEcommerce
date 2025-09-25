@@ -67,7 +67,7 @@ class ProductBrand extends Controller
     {
 
         $brand = Brand::where("id", $id)->first();
-
+        
         return view("Admin.product.productbrand.edit", compact('brand'));
     }
 
