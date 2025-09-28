@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Adminview;
 use App\Http\Controllers\Admin\Authenticate as AdminAuthenticate;
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\admin\product;
 use App\Http\Controllers\Admin\ProductBrand;
 use App\Http\Controllers\admin\Productcategory as AdminProductcategory;
@@ -19,7 +20,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 Route::prefix('admin')->middleware(['adminauth'])->name('admin.')->group(function () {
 
+    Route::get("/",function(){
 
+            
+
+    });
 
     Route::get("/admindashboard", [Adminview::class, "index"])->name("dashboard");
 
@@ -30,7 +35,12 @@ Route::prefix('admin')->middleware(['adminauth'])->name('admin.')->group(functio
     Route::resource("productcategory", ProductCategoryController::class);
     Route::post("searchproductcategory", [ProductCategoryController::class, "searchproductcategory"])->name('searchproductcategory');
 
+
+    Route::post("searchbanner", [BannerController::class, "searchbanner"])->name('searchbanner');
+
     Route::post("searchproducts", [product::class, "searchproducts"])->name("searchproduct");
 
     Route::resource("product", product::class);
+
+    Route::resource("banner", BannerController::class);
 });
