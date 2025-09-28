@@ -252,17 +252,17 @@ class product extends Controller
             $actions = [
                 [
                     'label' => 'Edit',
-                    'link' => fn($item) => route('admin.productbrand.edit', $item->id),
+                    'link' => fn($item) => route('admin.product.edit', $item->id),
                     'class' => 'warning'
                 ],
                 [
                     'label' => 'Delete',
-                    'link' => fn($item) => route('admin.productbrand.destroy', $item->id),
+                    'link' => fn($item) => route('admin.product.destroy', $item->id),
                     'class' => 'danger'
                 ]
             ];
 
-            $html = view('components.admin.table', compact('items', 'headers', 'actions'))->render();
+            $html = view('components.admin.producttable', compact('items', 'headers', 'actions'))->render();
         } else {
 
             $items = \App\Models\admin\product::paginate(3);

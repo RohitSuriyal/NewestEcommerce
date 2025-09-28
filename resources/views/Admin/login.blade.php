@@ -214,7 +214,7 @@
        
 
         <button class="submit">Submit</button>
-        <p class="signin">Don't  have an account ? <a href="{{route('adminregisterview')}}">Signp</a> </p>
+        <p class="signin">Don't  have an account ? <a href="{{route('adminregister')}}">Signp</a> </p>
     </form>
 
 </body>

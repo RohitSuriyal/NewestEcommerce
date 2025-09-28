@@ -216,7 +216,7 @@
         </label>
 
         <button class="submit">Submit</button>
-        <p class="signin">Already have an account ? <a href="#">Signin</a> </p>
+        <p class="signin">Already have an account ? <a href="{{route('adminloginview')}}">Signin</a> </p>
     </form>
 
 </body>

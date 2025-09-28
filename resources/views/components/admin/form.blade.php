@@ -88,6 +88,7 @@
 
 
     @elseif($type=="file" && $name=="main_image")
+    <label class="my-2">image</label>
       <div class="upload-box"  
      style="background-image: url('{{ $value ? asset('images/' . $value) : asset('images/placeholder.png') }}');"  
      id="uploadBox">
