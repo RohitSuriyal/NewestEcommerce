@@ -9,7 +9,10 @@ class product extends Model
 {
     protected $fillable = ['name', 'price', 'rating', 'brand_id', 'category_id', 'description', 'quantity', 'image', "main_image"];
 
+    protected $casts=[
 
+        "image"=>'array'
+    ];
 
     public function brand()
     {

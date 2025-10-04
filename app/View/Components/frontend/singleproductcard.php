@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\frontend;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class frontend.header extends Component
+class singleproductcard extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class frontend.header extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.frontend.header');
+        return view('components.frontend.singleproductcard');
     }
 }

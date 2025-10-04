@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/admin.php';
+require __DIR__ . '/frontend.php';
+
 // Route::get('/', function () {
 //     return view('Admin.register');    
 // })->name('adminregisterview');
@@ -35,11 +37,3 @@ Route::get('/logout', function () {
 })->name('adminlogout');
 
 
-Route::get("/website", function () {
-
-    $banners = Banner::all();
-    $products=product::all();
-
-
-    return view('frontend.home', compact('banners','products'));
-});

@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light navbar_background">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('website.home')}}">
+        <a class="navbar-brand" href="#">
             <img class="logo_image" src="{{ asset('images/ecommerce_logo.png') }}" alt="logo">
         </a>
 
@@ -20,14 +20,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse border border-danger" id="navbarSupportedContent">
 
-            <form class="d-flex mx-auto" style="width: 50%;">
-                <input name="search" class="form-control" type="search" placeholder="Search"
+            <form class="d-flex flex-grow-1 ps-lg-5">
+                <input name="search" class="form-control me-2 ms-md-5" type="search" placeholder="Search"
                     aria-label="Search">
             </form>
 
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav w-25 mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active nav_text" aria-current="page" href="#">Home</a>
                 </li>
@@ -41,10 +41,6 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                    </ul>
                 </li>
             </ul>
         </div>

@@ -18,7 +18,9 @@
 
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <style>
-        .form-control:focus {
+
+        .form-control:focus 
+        {
             outline: none !important;
             border-color: none !important;
             box-shadow: none !important;
@@ -30,14 +32,11 @@
 </head>
 
 <body>
-    @if(Auth::guard("admin")->check())
+ 
     <x-global.header />
-   
     @yield("content")
-
-    @if(Auth::guard("admin")->check())
     <x-global.footer />
-  
+
     <!-- Scripts -->
     <script src="{{asset('js/scripts.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

@@ -61,7 +61,7 @@
     <div class="slider_container">
         @foreach ($products as $product )
          
-          <a>
+          <a  href="{{route('website.allproduct',$product->id)}}">
              <div class="card p-3 h-100">
                 <img src="{{ asset('images/'.$product->main_image) }}" class="card_image" alt="...">
                 <div class="card-body">

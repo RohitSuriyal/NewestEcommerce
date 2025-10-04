@@ -22,8 +22,6 @@ Route::prefix('admin')->middleware(['adminauth'])->name('admin.')->group(functio
 
     Route::get("/",function(){
 
-            
-
     });
 
     Route::get("/admindashboard", [Adminview::class, "index"])->name("dashboard");

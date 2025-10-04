@@ -4,6 +4,8 @@
     "category"=>'',
 ])
 
+
+
 @push("styles")
     <style>
         .slider_container {
@@ -56,17 +58,15 @@
 
 <div class="container p-3 position-relative slider-wrapper">
     <h1>{{ $title }}</h1>
-
     <!-- Slider -->
     <div class="slider_container">
-        @foreach ($products as $product )
-         @if ($category=="Mobiles" && $product->category->name=="Mobiles")
-          <a>
+      @foreach ($products as $product )
+        @if ($category=="Mobiles" && $product->category->name=="Mobiles")
+         <a href="{{route('website.allproduct', $product->id)}}">
              <div class="card p-3 h-100">
                 <img src="{{ asset('images/'.$product->main_image) }}" class="card_image" alt="...">
                 <div class="card-body">
                    <h5 class="card-title">{{ Str::limit($product->name, 20) }}</h5>
-
                   <p class="card-text description">
                  {{ Str::limit($product->description, 100) }}
                 </p>
@@ -77,7 +77,7 @@
         @endif
 
         @if ($category=="appliance" && $product->category->name=="appliance")
-          <a>
+          <a href="{{route('website.allproduct', $product->id)}}">
              <div class="card p-3 h-100">
                 <img src="{{ asset('images/'.$product->main_image) }}" class="card_image" alt="...">
                 <div class="card-body">
@@ -88,10 +88,28 @@
                 </p>
                 <button class="btn btn-warning read-more-btn">Read more</button>
                 </div>
-            </div>
-          </a>
-          @endif
+             </div>
+           </a>
+         @endif
 
+         {{-- this is for the related products --}}
+         @if($category=="")
+
+        <a href="{{route('website.allproduct', $product->id)}}">
+             <div class="card p-3 h-100">
+                <img src="{{ asset('images/'.$product->main_image) }}" class="card_image" alt="...">
+                <div class="card-body">
+                   <h5 class="card-title">{{ Str::limit($product->name, 20) }}</h5>
+
+                  <p class="card-text description">
+                 {{ Str::limit($product->description, 100) }}
+                </p>
+                <button class="btn btn-warning read-more-btn">Read more</button>
+                </div>
+             </div>
+           </a>
+
+         @endif
         @endforeach
     </div>
 
