@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use Exception;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Brand;
-
 use App\Models\admin\Product as ModelsAdminProduct;
 use App\Models\Admin\ProductCategory;
-use Exception;
+
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
