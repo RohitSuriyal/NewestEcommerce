@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\Adminview;
 use App\Http\Controllers\Admin\Authenticate as AdminAuthenticate;
 use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\admin\Product as AdminProduct;
+use App\Http\Controllers\Admin\Product as AdminProduct;
 use App\Http\Controllers\Admin\ProductBrand;
 use App\Http\Controllers\admin\Productcategory as AdminProductcategory;
 use App\Http\Controllers\admin\ProductCategoryController;
