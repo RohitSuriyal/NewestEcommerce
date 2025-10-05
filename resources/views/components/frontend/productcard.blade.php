@@ -19,6 +19,7 @@
     height: 100%;
 }
 
+
 </style>
 @endpush
 
@@ -38,15 +39,13 @@
                             <span class="rating-badge">
                                 {{ $product->rating }} &#9733;
                             </span>
-                            <p>{{ Str::limit($product->description, 500) }}</p>
+                            <p style="color:black">{{ Str::limit($product->description, 500) }}</p>
                         </div>
-                        <div>
-                            <button class="btn btn-warning">Read More</button>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-md-2 d-flex align-items-center justify-content-center">
-                 <h1>₹{{ number_format($product->price, 2) }}</h1>
+                 <h1 style="color:black">₹{{ number_format($product->price, 2) }}</h1>
 
                 </div>
             </div>

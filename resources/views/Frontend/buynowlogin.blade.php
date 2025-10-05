@@ -15,7 +15,7 @@
             border-radius: 30px !important;
         }
     </style>
-    
+
 @endpush
 
 @section('content')
@@ -26,6 +26,8 @@
     </div>
     <div class="container">
         <div class="accordion mt-3" id="accordionExample">
+
+
             <div class="accordion-item">
                 <h2 class="accordion-header">
                     <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
@@ -33,6 +35,7 @@
                         <h5>LOGIN OR SIGNUP</h5>
                     </button>
                 </h2>
+
                 <div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <form method="post" id="emialverifyform">
@@ -46,8 +49,9 @@
                             <x-frontend.button buttontext="Continue" />
                         </form>
                     </div>
-
                 </div>
+
+
                 <hr>
                 <div class="accordion-item my-2">
                     <h2 class="accordion-header">
@@ -56,8 +60,6 @@
                             <h5>Address</h5>
                         </button>
                     </h2>
-
-
 
                     <div id="collapseTwo" class="accordion-collapse collapse {{ $errors->any() ? 'show' : '' }}"
                         data-bs-parent="#accordionExample">
@@ -109,9 +111,9 @@
                                 </div>
                                 <div class="col-md-12  w-75">
                                     <lablel>Address</lablel>
-                                    <textarea name="address" class="form-control" placeholder="Enter your Address">
-                                                               {{$userdetails->address}}
-                                                        </textarea>
+                <textarea name="address" class="form-control" placeholder="Enter your Address">{{$userdetails->address}} </textarea>
+          
+                                                                   
                                     @error("address")
                                         <span class="text-danger">
                                             {{$message}}
@@ -236,23 +238,28 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="accordion-button {{Auth::guard('web')->check() ? '' : 'collapsed'}}" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                            aria-controls="collapseThree">
                             <h5>Order Summary</h5>
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div id="collapseThree" class="accordion-collapse {{Auth::guard('web')->check() ? '' : 'collapse' }}"
+                        data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <x-frontend.singleproductcard :product="$product" ordersummary="ordersummary" />
                         </div>
-                        
-
                     </div>
                 </div>
             </div>
-
         </div>
 
+        <div class="d-flex  justify-content-between py-3 my-3 px-3 global_box_shadow">
+            <div>Order Confirmtion will be sent to <strong>{{Auth::guard("web")->user()->email}}</strong></div>
+            <div>
+                <x-frontend.button type="button" buttontext="Continue" />
+            </div>
+        </div>
 @endsection
     @push("scripts")
         <script>

@@ -29,23 +29,21 @@
     <!-- Custom Styles - LOAD AFTER BOOTSTRAP -->
     <style>
         /* Sticky Footer Styles */
-        html, body 
-        {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
-            min-height:100vh
+            min-height: 100vh
         }
 
-        body 
-        {
+        body {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        main 
-        {
+        main {
             flex: 1 0 auto;
         }
 
@@ -102,6 +100,14 @@
 
         .btn:hover {
             background-color: inherit !important;
+        }
+
+        .global_box_shadow {
+            box-shadow: 0.2px 0.2px 1px rgba(0, 0, 0, 0.5)
+        }
+
+        .rating-badge {
+            font-size: 9px !important;
         }
     </style>
 
