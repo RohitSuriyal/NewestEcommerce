@@ -49,7 +49,6 @@
         }
        
         .card_image{
-
             object-fit: cover!important;
             height:200px!important;
         }

@@ -12,8 +12,12 @@
             enctype="multipart/form-data">
             @method("PUT")
             @csrf
-             @php
-                $images = $product->image ? json_decode($product->image, true) : [];
+            @php
+                $images = $product->image;
+
+                if (!is_array($images)) {
+                    $images = $images ? json_decode($images, true) : [];
+                }
             @endphp
             <x-admin.form :newimages="$images" />
             <div class="row">
@@ -59,10 +63,10 @@
                 <x-admin.form name="images" value="{{$product->main_image}}" label="Main Image" name="main_image"
                     type="file" aria-placeholder="selec the image" />
             </div>
-           
+
             <div class="row">
                 <label class="ms-1 my-2">Image</label>
-                <x-admin.form name="images"  label="image" type="file" />
+                <x-admin.form name="images" label="image" type="file" />
             </div>
 
             <div class="row">

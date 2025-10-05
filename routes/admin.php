@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\Adminview;
 use App\Http\Controllers\Admin\Authenticate as AdminAuthenticate;
 use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\admin\product;
+use App\Http\Controllers\admin\Product as AdminProduct;
 use App\Http\Controllers\Admin\ProductBrand;
 use App\Http\Controllers\admin\Productcategory as AdminProductcategory;
 use App\Http\Controllers\admin\ProductCategoryController;
@@ -36,9 +36,9 @@ Route::prefix('admin')->middleware(['adminauth'])->name('admin.')->group(functio
 
     Route::post("searchbanner", [BannerController::class, "searchbanner"])->name('searchbanner');
 
-    Route::post("searchproducts", [product::class, "searchproducts"])->name("searchproduct");
+    Route::post("searchproducts", [AdminProduct::class, "searchproducts"])->name("searchproduct");
 
-    Route::resource("product", product::class);
+    Route::resource("product", AdminProduct::class);
 
     Route::resource("banner", BannerController::class);
 });

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-   <x-admin.pageheader title="Banner" buttontext="Add Banner" buttonlink="{{route('admin.banner.create')}}" />
-   <x-admin.success />
+   <x-Admin.pageheader title="Banner" buttontext="Add Banner" buttonlink="{{route('admin.banner.create')}}" />
+   <x-Admin.success />
 
    <input class="searchbanner w-25 form-control ms-3 my-2" />
    @php
@@ -26,7 +26,7 @@
 
    @endphp
    <div id="tablewrapperbanner">
-      <x-admin.bannertable :headers="$headers" :actions="$actions" :items="$allbanners" />
+      <x-Admin.bannertable :headers="$headers" :actions="$actions" :items="$allbanners" />
 
    </div>
 

@@ -21,6 +21,6 @@ class bannertable extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.admin.bannertable');
+        return view('components.Admin.bannertable');
     }
 }

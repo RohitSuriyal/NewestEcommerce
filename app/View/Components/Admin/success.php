@@ -21,6 +21,6 @@ class success extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.admin.success');
+        return view('components.Admin.success');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models\admin;
 use App\Models\Admin\Brand;
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
     protected $fillable = ['name', 'price', 'rating', 'brand_id', 'category_id', 'description', 'quantity', 'image', "main_image"];
 

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-admin.pageheader title="Brands" subtitle="Manage all registered brands" buttontext="Add ProductBrand"
+    <x-Admin.pageheader title="Brands" subtitle="Manage all registered brands" buttontext="Add ProductBrand"
         buttonlink="{{ route('admin.productbrand.create') }}" />
 
-    <x-admin.input name="searchbar" class="brandsearch w-25 ms-3 my-3" type="text" placeholder="Enter the brand name" />
+    <x-Admin.input name="searchbar" class="brandsearch w-25 ms-3 my-3" type="text" placeholder="Enter the brand name" />
 
 
     @if (session('success'))
@@ -34,7 +34,7 @@
     @endphp
 
     <div id="tablewrapper">
-        <x-admin.table :headers="$headers" :items="$Brands" :actions="$actions" />
+        <x-Admin.table :headers="$headers" :items="$Brands" :actions="$actions" />
     </div>
 @endsection
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <x-admin.pageheader title="Product Category" buttontext="+ Add Product"
+    <x-Admin.pageheader title="Product Category" buttontext="+ Add Product"
         buttonlink="{{route('admin.productcategory.create')}}" />
     @php
 
@@ -23,7 +23,7 @@
     @endphp
 
 
-    <x-admin.input name="searchcategory" class="searchcategory w-25 ms-3 my-3" type="text"
+    <x-Admin.input name="searchcategory" class="searchcategory w-25 ms-3 my-3" type="text"
         placeholder="Enter the Category" />
 
     @if(session("success"))
@@ -35,7 +35,7 @@
 
 
     <div id="tablewrappercategory">
-        <x-admin.table :headers="$headers" :actions="$actions" :items="$productcategories" />
+        <x-Admin.table :headers="$headers" :actions="$actions" :items="$productcategories" />
     </div>
 
 

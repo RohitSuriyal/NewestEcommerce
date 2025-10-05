@@ -25,16 +25,16 @@
             <div class="row">
                 <div class="col-md-3">
 
-                    <x-admin.form type="file" name="main_image" />
+                    <x-Admin.form type="file" name="main_image" />
 
                 </div>
                 <div class="col-md-6">
-                 <x-admin.form type="text" label="name" name="name"  placeholder="Enter Banner name"/>
+                 <x-Admin.form type="text" label="name" name="name"  placeholder="Enter Banner name"/>
                 </div>
 
             </div>
 
-                 <x-admin.button buttontext="Submit"/>
+                 <x-Admin.button buttontext="Submit"/>
 
         </form>
 

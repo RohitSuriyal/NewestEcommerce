@@ -4,13 +4,14 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Brand;
-use App\Models\admin\product as AdminProduct;
+
+use App\Models\admin\Product as ModelsAdminProduct;
 use App\Models\Admin\ProductCategory;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
-class product extends Controller
+class Product extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class product extends Controller
     {
 
 
-        $products = \App\Models\admin\product::paginate(3);
+        $products = ModelsAdminProduct::paginate(3);
 
         return view('Admin.product.index', compact('products'));
     }
@@ -88,7 +89,7 @@ class product extends Controller
                 $validate['image'] = $images_json;
                 $validate['main_image'] = $main_image_name;
 
-                AdminProduct::create($validate);
+                ModelsAdminProduct::create($validate);
 
                 return redirect()->route('admin.product.index')->with(["success" => "Product added Successfully"]);
             }
@@ -114,7 +115,7 @@ class product extends Controller
     {
 
 
-        $product = \App\Models\admin\product::where("id", $id)->first();
+        $product = ModelsAdminProduct::where("id", $id)->first();
         $categories = ProductCategory::all();
         $brands = Brand::all();
         return view("admin.product.edit", compact('product', 'categories', 'brands'));
@@ -129,7 +130,7 @@ class product extends Controller
 
         try {
 
-            $product = \App\Models\admin\product::findOrFail($id);
+            $product = ModelsAdminProduct::findOrFail($id);
 
             $validate = $request->validate([
                 "name" => "required",
@@ -223,7 +224,7 @@ class product extends Controller
 
         try{
 
-            $product=\App\Models\admin\product::findOrFail($id);
+            $product=ModelsAdminProduct::findOrFail($id);
 
             if($product){
 
@@ -246,7 +247,7 @@ class product extends Controller
         $search = $request->searchValue;
 
         if ($search != null) {
-            $items = \App\Models\admin\product::where('name', 'like', "{$search}%")->paginate(3);
+            $items = ModelsAdminProduct::where('name', 'like', "{$search}%")->paginate(3);
             // Optional: headers and actions
             $headers = ["S.no", "name", "price", "rating", "brand", "category", "image"];
             $actions = [
@@ -265,7 +266,7 @@ class product extends Controller
             $html = view('components.admin.producttable', compact('items', 'headers', 'actions'))->render();
         } else {
 
-            $items = \App\Models\admin\product::paginate(3);
+            $items = ModelsAdminProduct::paginate(3);
             // Optional: headers and actions
             $headers = ["S.no", "name", "price", "rating", "brand", "category", "image"];
             $actions = [
