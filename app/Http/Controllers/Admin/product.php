@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Exception;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Brand;
-use App\Models\admin\Product as ModelsAdminProduct;
+use App\Models\Admin\Product as ModelsAdminProduct;
 use App\Models\Admin\ProductCategory;
 
 use Illuminate\Http\Request;
