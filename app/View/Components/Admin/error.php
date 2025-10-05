@@ -21,6 +21,6 @@ class error extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.Admin.error');
+        return view('Components.Admin.error');
     }
 }

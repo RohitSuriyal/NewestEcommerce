@@ -21,6 +21,6 @@ class producttable extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.Admin.producttable');
+        return view('Components.Admin.producttable');
     }
 }

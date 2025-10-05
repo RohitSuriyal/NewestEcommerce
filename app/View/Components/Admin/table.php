@@ -21,6 +21,6 @@ class table extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.Admin.table');
+        return view('Components.Admin.table');
     }
 }

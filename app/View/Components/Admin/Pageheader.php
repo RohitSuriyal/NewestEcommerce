@@ -21,6 +21,6 @@ class Pageheader extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.Admin.pageheader');
+        return view('Components.Admin.pageheader');
     }
 }
